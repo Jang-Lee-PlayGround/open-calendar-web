@@ -10,14 +10,17 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1",
+    "sort-by": "^0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "^4.2.1",
-    "@wixc3/react-board": "^2.4.0",
     "sass": "^1.70.0",
     "typescript": "^5.3.3",
     "vite": "^4.5.1",

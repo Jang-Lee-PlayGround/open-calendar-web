@@ -1,0 +1,33 @@
+.Page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.Header {
+  flex-basis: 75px;
+  width: 100%;
+  margin: min(3%, 50px);
+  height: auto;
+}
+
+.Panel {
+  flex-grow: 1;
+  flex-basis: 0px;
+  width: 100%;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Footer {
+  flex-basis: 75px;
+  width: 100%;
+  margin: min(3%, 50px);
+  height: auto;
+}

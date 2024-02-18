@@ -5,6 +5,7 @@ import { ReactComponent as ViteLogo } from './assets/vite.svg';
 import { ReactComponent as TypescriptLogo } from './assets/typescript.svg';
 import { ReactComponent as ScssLogo } from './assets/scss.svg';
 import styles from './App.module.scss';
+import { Link } from 'react-router-dom';
 
 function App() {
     const [count, setCount] = useState(0);
@@ -51,9 +52,9 @@ function App() {
                     Edit <code>src/App.tsx</code> and save to test HMR
                 </p>
             </div>
-            <p className={styles['read-the-docs']}>
-                Click on the Vite and React logos to learn more
-            </p>
+            <div className={styles.card}>
+                <Link to={`/MainPage`}>MainPage</Link>
+            </div>
         </div>
     );
 }
