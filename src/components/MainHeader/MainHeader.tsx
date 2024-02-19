@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import styles from './main-header.module.scss';
+import styles from './MainHeader.module.scss';
 
 export interface MainHeaderProps {
     className?: string;

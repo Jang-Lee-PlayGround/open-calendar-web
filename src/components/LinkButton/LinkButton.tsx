@@ -1,4 +1,4 @@
-import styles from './link-button.module.scss';
+import styles from './LinkButton.module.scss';
 import { Link } from 'react-router-dom';
 
 export interface MainFooterProps {

@@ -9,25 +9,26 @@
 }
 
 .Header {
+  background-color: rgba(0, 77, 0, 0.5);
   flex-basis: 75px;
   width: 100%;
   margin: min(3%, 50px);
   height: auto;
+  overflow: hidden;
 }
 
 .Panel {
+  background-color: rgba(77, 77, 0, 0.5);
   flex-grow: 1;
   flex-basis: 0px;
   width: 100%;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  flex-direction: column;
+  overflow-y: scroll;
 }
 
 .Footer {
   flex-basis: 75px;
   width: 100%;
-  margin: min(3%, 50px);
-  height: auto;
+  //margin: min(3%, 50px);
+  overflow: hidden;
+  background-color: rgba(77, 0, 77, 0.5);
 }

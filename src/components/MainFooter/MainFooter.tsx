@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import styles from './main-footer.module.scss';
-import { LinkButton } from '../link-button/link-button';
+import styles from './MainFooter.module.scss';
+import { LinkButton } from '../LinkButton/LinkButton';
 
 export interface MainFooterProps {
     className?: string;

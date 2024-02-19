@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './index.css';
-import { MainPage } from './pages/main-page/main-page';
-import { SearchPage } from './pages/search-page/search-page';
+import { MainPage } from './pages/MainPage/MainPage';
+import { SearchPage } from './pages/SearchPage/SearchPage';
 
 const router = createBrowserRouter([
     { path: '/', element: <App /> },
