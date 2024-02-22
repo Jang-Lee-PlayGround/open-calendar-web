@@ -4,11 +4,9 @@ import { MainFooter } from '../../components/MainFooter/MainFooter';
 import { MainHeader } from '../../components/MainHeader/MainHeader';
 import { CreateCalendar } from '../../components/CreateCalendar/CreateCalendar';
 
-export interface MainPageProps {
-    className?: string;
-}
+export interface MainPageProps {}
 
-export const MainPage = ({ className }: MainPageProps) => {
+export const MainPage = () => {
     return (
         <div className={PageStyles.Page}>
             <MainHeader className={PageStyles.Header} />

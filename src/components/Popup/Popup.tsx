@@ -1,13 +1,24 @@
 import classNames from 'classnames';
 import styles from './Popup.module.scss';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 
 export interface PopupProps {
     className?: string;
     isActive: boolean;
+    setActive: Function;
     children: ReactElement | ReactElement[]; // Updated to allow passing multiple children
 }
 
-export const Popup = ({ className, isActive, children }: PopupProps) => {
-    return <div className={classNames(className, styles.root)}>{isActive ? children : null}</div>;
+export const Popup = ({ className, isActive, setActive, children }: PopupProps) => {
+    // useEffect(() => {
+    //     console.log('Popup');
+    // });
+    return (
+        <div className={classNames(className)}>
+            {isActive ? (
+                <div className={styles.background} onClick={() => setActive(false)} />
+            ) : null}
+            <div className={styles.container}>{isActive ? children : null}</div>
+        </div>
+    );
 };

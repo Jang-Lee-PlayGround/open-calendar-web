@@ -1,19 +1,16 @@
 import PageStyles from '../page.module.scss';
-import styles from './SearchPage.module.scss';
+import styles from './HistoryPage.module.scss';
 import { MainFooter } from '../../components/MainFooter/MainFooter';
 import { MainHeader } from '../../components/MainHeader/MainHeader';
 
-export interface SearchPageProps {}
+export interface HistoryPageProps {}
 
-export const SearchPage = ({}: SearchPageProps) => {
+export const HistoryPage = ({}: HistoryPageProps) => {
     return (
         <div className={PageStyles.Page}>
             <MainHeader className={PageStyles.Header} />
             <div className={PageStyles.Panel}>
-                <div className={styles.search_bar}>
-                    <input className={styles.textinput} type="text" />
-                </div>
-                <div className={styles.main_calendar}>검색 패널</div>
+                <div className={styles.main_calendar}>활동 이력 패널</div>
             </div>
             <MainFooter className={PageStyles.Footer} />
         </div>

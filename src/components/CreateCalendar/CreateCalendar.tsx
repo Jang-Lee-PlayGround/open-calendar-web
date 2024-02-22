@@ -1,7 +1,7 @@
 import styles from './CreateCalendar.module.scss';
 import CreateCalendar_png from '../../assets/icon/CreateCalendar.png';
 import classNames from 'classnames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Popup } from '../Popup/Popup';
 import { ReactComponent as ReactLogo } from '../../assets/react.svg';
 
@@ -11,22 +11,17 @@ export interface CreateCalendarProps {
 
 export const CreateCalendar = ({ className }: CreateCalendarProps) => {
     const [isActive, setActive] = useState(false);
-    function toggleActive() {
-        isActive ? setActive(false) : setActive(true);
-    }
+    // useEffect(() => {
+    //     console.log('CreateCalendar');
+    // });
     return (
-        <div className={classNames(className, styles.root)}>
-            <Popup isActive={isActive}>
-                <ReactLogo
-                    height="6em"
-                    width="6em"
-                    className={classNames(styles.logo, styles.react)}
-                    title="React logo"
-                />
+        <div className={classNames(className)}>
+            <Popup isActive={isActive} setActive={setActive}>
+                <div className={styles.panel_container}></div>
             </Popup>
-            <div className={styles.flex_continer}>
+            <div className={styles.button_container}>
                 <div className={styles.filler} />
-                <button className={styles.button} onClick={toggleActive}>
+                <button className={styles.button} onClick={() => setActive(true)}>
                     <img className={styles.image} src={CreateCalendar_png} />
                 </button>
             </div>

@@ -6,5 +6,5 @@ export interface MainHeaderProps {
 }
 
 export const MainHeader = ({ className }: MainHeaderProps) => {
-    return <div className={styles.root}>메인 헤더</div>;
+    return <div className={classNames(className, styles.root)}>메인 헤더</div>;
 };
