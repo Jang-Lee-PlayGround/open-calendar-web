@@ -17,7 +17,9 @@ export const CreateCalendar = ({ className }: CreateCalendarProps) => {
     return (
         <div className={classNames(className)}>
             <Popup isActive={isActive} setActive={setActive}>
-                <div className={styles.panel_container}></div>
+                <div className={styles.create_panel}>
+                    <input type="text"></input>
+                </div>
             </Popup>
             <div className={styles.button_container}>
                 <div className={styles.filler} />

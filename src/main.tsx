@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import './index.css';
 import { CONFIG } from './config';
+import { LoginPage } from './pages/LoginPage/LoginPage';
 
 (async () => {
     const Routes = await Promise.all(
@@ -12,12 +12,22 @@ import { CONFIG } from './config';
             return {
                 path: `/${page}`,
                 element: <TargetPage />,
-                errorElement: <App />,
+                errorElement: <Navigate replace to="/LoginPage" />,
                 children: [],
             };
         })
     );
-    return createBrowserRouter(Routes);
+    return createBrowserRouter([
+        {
+            path: '/',
+            element: <Navigate replace to="/LoginPage" />,
+        },
+        {
+            path: '/LoginPage',
+            element: <LoginPage />,
+        },
+        ...Routes,
+    ]);
 })().then((router) => {
     const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
     root.render(
