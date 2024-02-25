@@ -1,0 +1,45 @@
+.container {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+  .signin_panel {
+    width: 350px;
+    max-width: 35vw;
+    min-width: 85px;
+    height: 300px;
+    max-height: 35vh;
+    min-height: 85px;
+    border-radius: 25px;
+    background-color: lightgrey;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .signup_panel {
+    width: 1000px;
+    max-width: 90vw;
+    min-width: 100px;
+    height: 750px;
+    max-height: 90vh;
+    min-height: 100px;
+    border-radius: 25px;
+    background-color: darkgray;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .create_user_popup {
+    width: 100%;
+  }
+}

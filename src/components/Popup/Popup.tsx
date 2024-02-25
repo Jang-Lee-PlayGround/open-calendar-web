@@ -6,7 +6,7 @@ export interface PopupProps {
     className?: string;
     isActive: boolean;
     setActive: Function;
-    children: ReactElement | ReactElement[]; // Updated to allow passing multiple children
+    children: ReactElement | ReactElement[];
 }
 
 export const Popup = ({ className, isActive, setActive, children }: PopupProps) => {

@@ -1,30 +1,32 @@
-import styles from './CreateCalendar.module.scss';
-import CreateCalendar_png from '../../assets/icon/CreateCalendar.png';
+import styles from './PopupButton.module.scss';
 import classNames from 'classnames';
-import { useEffect, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Popup } from '../Popup/Popup';
-import { ReactComponent as ReactLogo } from '../../assets/react.svg';
 
-export interface CreateCalendarProps {
+export interface PopupButtonProps {
     className?: string;
+    children: ReactElement | ReactElement[];
+    buttonIcon?: string;
 }
 
-export const CreateCalendar = ({ className }: CreateCalendarProps) => {
+export const PopupButton = ({ className, children, buttonIcon }: PopupButtonProps) => {
     const [isActive, setActive] = useState(false);
     // useEffect(() => {
-    //     console.log('CreateCalendar');
+    //     console.log('PopupButton');
     // });
     return (
         <div className={classNames(className)}>
             <Popup isActive={isActive} setActive={setActive}>
-                <div className={styles.create_panel}>
-                    <input type="text"></input>
-                </div>
+                {children}
             </Popup>
             <div className={styles.button_container}>
                 <div className={styles.filler} />
                 <button className={styles.button} onClick={() => setActive(true)}>
-                    <img className={styles.image} src={CreateCalendar_png} />
+                    {buttonIcon ? (
+                        <img className={styles.image} src={buttonIcon} />
+                    ) : (
+                        <div className={styles.image}>popup</div>
+                    )}
                 </button>
             </div>
         </div>

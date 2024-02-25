@@ -1,12 +1,25 @@
 import { useNavigate } from 'react-router-dom';
 import PageStyles from '../page.module.scss';
-import styles from './LoginPage.module.scss';
+import styles from './SigninPage.module.scss';
 import { CONFIG } from '../../config';
+import { PopupButton } from '../../components/PopupButton/PopupButton';
 
-export interface LoginPageProps {}
+export interface SigninPageProps {}
 
-export const LoginPage = ({}: LoginPageProps) => {
+const SigninPanel = () => {
     const navigate = useNavigate();
+    async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+        navigate('/MainPage');
+    }
+    return (
+        <form className={styles.signin_panel} onSubmit={onSubmit}>
+            <h1 className={styles.title}>SIGN IN</h1>
+            {/* <input type="password" name="" placeholder="" /> */}
+            <button type="submit">제출</button>
+        </form>
+    );
+};
+const SignupPanel = () => {
     async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -26,7 +39,7 @@ export const LoginPage = ({}: LoginPageProps) => {
             });
 
             if (response.ok) {
-                navigate('/MainPage');
+                //TODO
             } else {
                 const errorMessage = await response.json();
                 console.error(errorMessage);
@@ -38,14 +51,23 @@ export const LoginPage = ({}: LoginPageProps) => {
         }
     }
     return (
+        <form className={styles.signup_panel} onSubmit={onSubmit}>
+            <h1 className={styles.title}>SIGN UP</h1>
+            <input type="text" name="nickname" placeholder="nickname" />
+            {/* <input type="password" name="" placeholder="" /> */}
+            <button type="submit">제출</button>
+        </form>
+    );
+};
+
+export const SigninPage = ({}: SigninPageProps) => {
+    return (
         <div className={PageStyles.Page}>
             <div className={styles.container}>
-                <form className={styles.create_panel} onSubmit={onSubmit}>
-                    <h1 className={styles.title}>SIGN UP</h1>
-                    <input type="text" name="nickname" placeholder="nickname" />
-                    {/* <input type="password" name="" placeholder="" /> */}
-                    <button type="submit">제출</button>
-                </form>
+                <SigninPanel />
+                <PopupButton className={styles.create_user_popup}>
+                    <SignupPanel />
+                </PopupButton>
             </div>
         </div>
     );

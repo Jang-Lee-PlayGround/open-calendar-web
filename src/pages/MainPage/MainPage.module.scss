@@ -3,7 +3,27 @@
   height: 2000px;
 }
 
-.create_calendar {
+.create_calendar_popup {
   position: sticky;
   bottom: 0px;
+
+  .create_panel {
+    width: 1000px;
+    max-width: 90vw;
+    min-width: 100px;
+    height: 750px;
+    max-height: 90vh;
+    min-height: 100px;
+    border-radius: 25px;
+    background-color: beige;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 10px;
+
+    .input_row {
+      width: 90%;
+      height: 100px;
+    }
+  }
 }

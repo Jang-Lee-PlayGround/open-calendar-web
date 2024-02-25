@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import './index.css';
 import { CONFIG } from './config';
-import { LoginPage } from './pages/LoginPage/LoginPage';
+import { SigninPage } from './pages/SigninPage/SigninPage';
 
 (async () => {
     const Routes = await Promise.all(
@@ -12,7 +12,7 @@ import { LoginPage } from './pages/LoginPage/LoginPage';
             return {
                 path: `/${page}`,
                 element: <TargetPage />,
-                errorElement: <Navigate replace to="/LoginPage" />,
+                errorElement: <Navigate replace to="/SigninPage" />,
                 children: [],
             };
         })
@@ -20,11 +20,11 @@ import { LoginPage } from './pages/LoginPage/LoginPage';
     return createBrowserRouter([
         {
             path: '/',
-            element: <Navigate replace to="/LoginPage" />,
+            element: <Navigate replace to="/SigninPage" />,
         },
         {
-            path: '/LoginPage',
-            element: <LoginPage />,
+            path: '/SigninPage',
+            element: <SigninPage />,
         },
         ...Routes,
     ]);
