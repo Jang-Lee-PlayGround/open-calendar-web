@@ -7,13 +7,20 @@ export interface PopupButtonProps {
     className?: string;
     children: ReactElement | ReactElement[];
     buttonIcon?: string;
+    isActive?: boolean;
+    setActive?: Function;
 }
 
-export const PopupButton = ({ className, children, buttonIcon }: PopupButtonProps) => {
-    const [isActive, setActive] = useState(false);
-    // useEffect(() => {
-    //     console.log('PopupButton');
-    // });
+export const PopupButton = ({
+    className,
+    children,
+    buttonIcon,
+    isActive,
+    setActive,
+}: PopupButtonProps) => {
+    if (isActive === undefined) {
+        [isActive, setActive] = useState(false);
+    }
     return (
         <div className={classNames(className)}>
             <Popup isActive={isActive} setActive={setActive}>
@@ -21,7 +28,7 @@ export const PopupButton = ({ className, children, buttonIcon }: PopupButtonProp
             </Popup>
             <div className={styles.button_container}>
                 <div className={styles.filler} />
-                <button className={styles.button} onClick={() => setActive(true)}>
+                <button className={styles.button} onClick={() => setActive!(true)}>
                     {buttonIcon ? (
                         <img className={styles.image} src={buttonIcon} />
                     ) : (
