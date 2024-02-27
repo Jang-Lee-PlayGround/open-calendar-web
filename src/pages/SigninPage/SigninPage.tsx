@@ -10,12 +10,47 @@ export interface SigninPageProps {}
 const SigninPanel = () => {
     const navigate = useNavigate();
     async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
-        navigate('/MainPage');
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        const jsonData: any = {};
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+        try {
+            // Perform POST request with form data
+            const response = await fetch(`${CONFIG.SERVER_BASE}/test/user/get`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Api-Version': '*.*.*',
+                },
+                body: JSON.stringify(jsonData),
+            });
+
+            if (response.ok) {
+                const recvUser = await response.json().then((e) => e.recvUser);
+                alert(JSON.stringify(recvUser));
+                navigate('/MainPage');
+            } else {
+                const errorMessage = await response.json().then((e) => e.errorMessage);
+                alert(errorMessage);
+            }
+        } catch (error) {
+            alert(error);
+        }
     }
     return (
         <form className={styles.signin_panel} onSubmit={onSubmit}>
             <h1 className={styles.title}>SIGN IN</h1>
-            {/* <input type="password" name="" placeholder="" /> */}
+            <div className={styles.input_container}>
+                <input
+                    className={styles.input}
+                    type="text"
+                    name="nickname"
+                    placeholder="nickname"
+                />
+                {/* <input type="password" name="" placeholder="" /> */}
+            </div>
             <button type="submit">로그인</button>
         </form>
     );

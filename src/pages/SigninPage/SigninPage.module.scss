@@ -41,18 +41,18 @@
     flex-wrap: nowrap;
     flex-direction: column;
     padding: 10px;
-    .input_container {
-      flex: 1;
-      width: 100%;
-      display: flex;
-      place-items: start;
-      justify-content: center;
-      .input {
-        width: 90%;
-      }
-    }
   }
 
+  .input_container {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    place-items: start;
+    justify-content: center;
+    .input {
+      width: 90%;
+    }
+  }
   .create_user_popup {
     width: 100%;
   }
