@@ -29,7 +29,7 @@ const SigninPanel = () => {
 
             if (response.ok) {
                 const recvUser = await response.json().then((e) => e.recvUser);
-                alert(JSON.stringify(recvUser));
+                //alert(JSON.stringify(recvUser));
                 navigate('/MainPage');
             } else {
                 const errorMessage = await response.json().then((e) => e.errorMessage);
