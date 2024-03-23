@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import "./index.css";
 import { loadPagesRouter } from "./1.app/app";
 
 loadPagesRouter().then((router) => {

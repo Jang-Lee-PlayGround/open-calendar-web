@@ -15,3 +15,4 @@ export { Main } from "./Main/Main";
 export { Profile } from "./Profile/Profile";
 export { Search } from "./Search/Search";
 export { Signin } from "./Signin/Signin";
+export * as styles from "./page.module.scss";

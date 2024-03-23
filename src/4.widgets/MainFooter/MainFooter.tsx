@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import styles from "./MainFooter.module.scss";
-import { LinkButton } from "../../6.entities/LinkButton/LinkButton";
+import footer_styles from "./MainFooter.module.scss";
+import shared_styles from "../../7.shared/shared.module.scss";
+import { LinkButton } from "../../7.shared/LinkButton/LinkButton";
 import { CONFIG } from "../../config";
 
 export interface MainFooterProps {
@@ -9,10 +10,10 @@ export interface MainFooterProps {
 
 export const MainFooter = ({ className }: MainFooterProps) => {
 	return (
-		<div className={classNames(className, styles.root)}>
+		<div className={classNames(shared_styles.flex_row, className)}>
 			{CONFIG.BUTTON_PAGES.map((page) => (
 				<LinkButton
-					className={styles.button}
+					className={footer_styles.button}
 					linkPath={`/${page}`}
 					buttonName={page}
 					key={page}
