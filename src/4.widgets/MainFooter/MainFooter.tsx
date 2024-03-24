@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import footer_styles from "./MainFooter.module.scss";
 import shared_styles from "../../7.shared/shared.module.scss";
-import { LinkButton } from "../../7.shared/LinkButton/LinkButton";
+import { LinkButton } from "../../7.shared/component/LinkButton/LinkButton";
 import { CONFIG } from "../../config";
 
 export interface MainFooterProps {
