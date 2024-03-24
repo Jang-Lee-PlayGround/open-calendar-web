@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { jsonFromForm, sendRequests } from "../../7.shared/ServerAPI";
+import { jsonFromForm, sendRequests } from "../../7.shared/utillites/ServerAPI";
 import { FixedPopupButton } from "../../7.shared/shared";
 import doSignupStyle from "./DoSignup.module.scss";
 

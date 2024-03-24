@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import signInPanelstyles from "./SigninPanel.module.scss";
 import shared_styles from "../../7.shared/shared.module.scss";
-import { jsonFromForm, sendRequests } from "../../7.shared/ServerAPI";
+import { jsonFromForm, sendRequests } from "../../7.shared/utillites/ServerAPI";
 import { DoSignup } from "../../5.features/features";
 import classNames from "classnames";
 
